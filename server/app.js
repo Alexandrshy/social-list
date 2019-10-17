@@ -1,6 +1,7 @@
 const express = require("express");
 const graphqlHTTP = require("express-graphql");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 const schema = require("./schema");
 const DB = require("./conf");
@@ -13,6 +14,7 @@ mongoose.connect(
   { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
+app.use(cors());
 app.use("/graphql", graphqlHTTP({ schema, graphiql: true }));
 
 const dbConnection = mongoose.connection;

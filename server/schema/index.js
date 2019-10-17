@@ -23,8 +23,8 @@ const PersonType = new GraphQLObjectType({
     },
     twitter: {
       type: TwitterType,
-      resolve(parent, args) {
-        return Twitter.findById(parent.twitterId);
+      resolve({ twitterId }) {
+        return Twitter.findById(twitterId);
       }
     }
   })
@@ -49,21 +49,21 @@ const Query = new GraphQLObjectType({
     person: {
       type: PersonType,
       args: { id: { type: GraphQLID } },
-      resolve(parent, args) {
-        return Person.findById(args.id);
+      resolve(parent, { id }) {
+        return Person.findById(id);
       }
     },
     persons: {
       type: new GraphQLList(PersonType),
-      resolve(parent, args) {
+      resolve(parent) {
         return Person.find({});
       }
     },
     twitter: {
       type: TwitterType,
       args: { id: { type: GraphQLID } },
-      resolve(parent, args) {
-        return Twitter.findById(args.id);
+      resolve(parent, { id }) {
+        return Twitter.findById(id);
       }
     }
   }
@@ -79,11 +79,11 @@ const Mutation = new GraphQLObjectType({
         img: { type: new GraphQLNonNull(GraphQLString) },
         twitterId: { type: GraphQLID }
       },
-      resolve(parent, args) {
+      resolve(parent, { name, img, twitterId }) {
         let person = new Person({
-          name: args.name,
-          img: args.img,
-          twitterId: args.twitterId
+          name,
+          img,
+          twitterId
         });
         return person.save();
       }
@@ -98,14 +98,17 @@ const Mutation = new GraphQLObjectType({
         link: { type: new GraphQLNonNull(GraphQLString) },
         authorId: { type: new GraphQLNonNull(GraphQLID) }
       },
-      resolve(parent, args) {
+      resolve(
+        parent,
+        { urlText, countTweets, countFollowers, date, link, authorId }
+      ) {
         let twitter = new Twitter({
-          urlText: args.urlText,
-          countTweets: args.countTweets,
-          countFollowers: args.countFollowers,
-          date: args.date,
-          link: args.link,
-          authorId: args.authorId
+          urlText,
+          countTweets,
+          countFollowers,
+          date,
+          link,
+          authorId
         });
         return twitter.save();
       }
@@ -115,8 +118,8 @@ const Mutation = new GraphQLObjectType({
       args: {
         id: { type: new GraphQLNonNull(GraphQLID) }
       },
-      resolve(parent, args) {
-        return Person.findByIdAndRemove(args.id);
+      resolve(parent, { id }) {
+        return Person.findByIdAndRemove(id);
       }
     },
     removeTwitter: {
@@ -124,8 +127,8 @@ const Mutation = new GraphQLObjectType({
       args: {
         id: { type: new GraphQLNonNull(GraphQLID) }
       },
-      resolve(parent, args) {
-        return Twitter.findByIdAndRemove(args.id);
+      resolve(parent, { id }) {
+        return Twitter.findByIdAndRemove(id);
       }
     },
     updatePerson: {
@@ -136,11 +139,11 @@ const Mutation = new GraphQLObjectType({
         img: { type: new GraphQLNonNull(GraphQLString) },
         twitterId: { type: new GraphQLNonNull(GraphQLID) }
       },
-      resolve(parent, args) {
+      resolve(parent, { id, name, img, twitterId }) {
         return Person.findOneAndUpdate(
-          args.id,
+          id,
           {
-            $set: { name: args.name, img: args.img, twitterId: args.twitterId }
+            $set: { name, img, twitterId }
           },
           { new: true, useFindAndModify: false }
         );
@@ -157,17 +160,20 @@ const Mutation = new GraphQLObjectType({
         link: { type: new GraphQLNonNull(GraphQLString) },
         authorId: { type: new GraphQLNonNull(GraphQLID) }
       },
-      resolve(parent, args) {
+      resolve(
+        parent,
+        { id, urlText, countTweets, countFollowers, date, link, authorId }
+      ) {
         return Twitter.findOneAndUpdate(
-          args.id,
+          id,
           {
             $set: {
-              urlText: args.urlText,
-              countTweets: args.countTweets,
-              countFollowers: args.countFollowers,
-              date: args.date,
-              link: args.link,
-              authorId: args.authorId
+              urlText,
+              countTweets,
+              countFollowers,
+              date,
+              link,
+              authorId
             }
           },
           { new: true, useFindAndModify: false }
