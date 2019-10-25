@@ -34,7 +34,7 @@ export const GilterGroup: React.FC<PropsType> = ({
                   id={`radio-${name}-${index}`}
                   className={s.filterItem__input}
                   type="radio"
-                  name="gender"
+                  name={name}
                 />
                 <div className={s.filterItem__button}>
                   <span>{item}</span>

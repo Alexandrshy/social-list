@@ -35,10 +35,11 @@
   --breakpoint-xl: 1400px;
 
   /* Animation */
-  --linear-transform: transform 0.3s linear;
-  --linear-fill: fill 0.3s linear;
-  --linear-color: color 0.3s linear;
-  --linear-background-color: background-color 0.3s linear;
+  --linear-all: 0.3s ease-out;
+  --linear-transform: transform 0.3s ease-out;
+  --linear-fill: fill 0.3s ease-out;
+  --linear-color: color 0.3s ease-out;
+  --linear-background-color: background-color 0.3s ease-out;
 
   --bg-color: var(--black-pearl);
   --font-color: var(--white);

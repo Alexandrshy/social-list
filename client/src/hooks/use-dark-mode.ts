@@ -8,7 +8,7 @@ const usePrefersDarkMode = () => {
   return useMedia(["(prefers-color-scheme: dark)"], [true], false);
 };
 
-function useDarkMode() {
+export default function useDarkMode() {
   const [state, setState] = useLocalStorage(LOCAL_STORAGE_THEME);
   const prefersDarkMode = usePrefersDarkMode();
   const stateTheme = state || prefersDarkMode;
@@ -20,5 +20,3 @@ function useDarkMode() {
 
   return [stateTheme, setState];
 }
-
-export default useDarkMode;

@@ -7,8 +7,6 @@ import { Header } from "../header/Header";
 import { Main } from "../main/Main";
 import { Footer } from "../footer/Footer";
 
-import s from "./App.module.css";
-
 const client = new ApolloClien({
   uri: "http://localhost:3005/graphql"
 });
@@ -16,7 +14,7 @@ const client = new ApolloClien({
 const App: React.FC = () => {
   return (
     <ApolloProvider client={client}>
-      <div className={s.wrapper}>
+      <div>
         <Header />
         <Main />
         <Footer />

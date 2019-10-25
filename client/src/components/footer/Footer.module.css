@@ -2,10 +2,12 @@
   position: fixed;
   bottom: 0;
   left: 0;
+  display: flex;
   width: 100%;
-  padding-top: 4.5rem;
-  padding-left: 320px;
   height: 225px;
+  align-items: center;
+  justify-content: center;
+  padding-left: 320px;
   background-color: var(--trout);
   text-align: center;
 }
@@ -41,4 +43,10 @@
 
 .footer .social .link:hover use {
   fill: var(--logo);
+}
+
+@media (max-width: 992px) {
+  .footer {
+    padding: 0 1.5rem;
+  }
 }
