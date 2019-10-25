@@ -1,0 +1,46 @@
+.button {
+  display: inline-block;
+  height: 2.5em;
+  padding-bottom: calc(0.5em - 1px);
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: calc(0.5em - 1px);
+  border: none;
+  border-radius: 4px;
+  box-shadow: none;
+  line-height: 1.35;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  color: #fff;
+  background: var(--first-side-gradient);
+  background-color: var(--first-side-gradient);
+  background-image: linear-gradient(
+    to bottom left,
+    var(--first-side-gradient),
+    var(--second-side-gradient)
+  );
+  background-size: 210% 210%;
+  background-position: 100% 0;
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-normal);
+  transition: var(--linear-transform);
+  cursor: pointer;
+}
+
+.button:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.button--small {
+  font-size: 0.75rem;
+}
+
+.button--normal {
+  font-size: 1rem;
+}
+
+.button--large {
+  font-size: 1.25rem;
+}

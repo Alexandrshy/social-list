@@ -1,0 +1,82 @@
+.switch {
+  z-index: 5;
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.switch__label {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  cursor: pointer;
+}
+
+.switch__input {
+  display: none;
+}
+
+.switch__slider {
+  position: relative;
+  width: 60px;
+  height: 6px;
+  margin-top: 14px;
+  border-radius: 28px;
+  background: var(--first-side-gradient);
+  background-image: linear-gradient(
+    -290deg,
+    var(--first-side-gradient),
+    var(--second-side-gradient)
+  );
+}
+
+.switch__circle {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: var(--dark-light);
+  border: 0;
+  transform: translate(-20px, -50%);
+  transition: var(--linear-transform);
+}
+
+.switch__circle:before,
+.switch__circle:after {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.switch__circle:before {
+  background-image: url("../../img/moonset.svg");
+  opacity: 0;
+}
+
+.switch__circle:after {
+  background-image: url("../../img/sunset.svg");
+  opacity: 1;
+}
+
+.switch__input:checked + .switch__slider .switch__circle {
+  transform: translate(40px, -50%);
+}
+
+.switch__input:checked + .switch__slider .switch__circle:before {
+  opacity: 1;
+}
+
+.switch__input:checked + .switch__slider .switch__circle:after {
+  opacity: 0;
+}

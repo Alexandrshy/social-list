@@ -1,0 +1,58 @@
+:root {
+  /* Primary colors */
+  --black-pearl: #1f2029;
+  --athens-gray: #f9f9fa;
+  --white: #ecedf3;
+  --cod-gray: #0a0a0a;
+  --dodger-blue: #1d8cf8;
+  --royal-blue: #3358f4;
+  --dark-light: #424455;
+  --tuna: #393a46;
+  --trout: #4c505f;
+  --sea-buckthorn: #f8ab37;
+  --jaffa: #f0883f;
+  --cerise-red: #da2c4d;
+  --silver: #cccccc;
+
+  /* Font family */
+  --default-font-style: normal;
+  --italic-font-style: italic;
+  --default-font-family: Arial;
+  --italic-font-family: Georgia;
+  --font-family-georgia: Georgia;
+  --font-nunito: "Nunito", sans-serif;
+
+  /* Font weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+  /* Breakpoint */
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 768px;
+  --breakpoint-md: 992px;
+  --breakpoint-lg: 1200px;
+  --breakpoint-xl: 1400px;
+
+  /* Animation */
+  --linear-transform: transform 0.3s linear;
+  --linear-fill: fill 0.3s linear;
+  --linear-color: color 0.3s linear;
+  --linear-background-color: background-color 0.3s linear;
+
+  --bg-color: var(--black-pearl);
+  --font-color: var(--white);
+  --first-side-gradient: var(--dodger-blue);
+  --second-side-gradient: var(--royal-blue);
+  --logo: var(--dodger-blue);
+  --social-icon: var(--white);
+}
+
+[data-theme="light"] {
+  --bg-color: var(--athens-gray);
+  --font-color: var(--cod-gray);
+  --first-side-gradient: var(--sea-buckthorn);
+  --second-side-gradient: var(--cerise-red);
+  --logo: var(--jaffa);
+  --social-icon: var(--dark-light);
+}

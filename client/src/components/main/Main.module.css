@@ -1,0 +1,8 @@
+.main {
+  z-index: 2;
+  position: relative;
+  padding-left: 320px;
+  margin-bottom: 225px;
+  background-color: var(--bg-color);
+  transition: var(--linear-background-color), var(--linear-color);
+}
