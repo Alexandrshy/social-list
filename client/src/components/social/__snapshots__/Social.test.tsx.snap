@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Social component should render 1`] = `
+<div
+  className="social"
+>
+  <ul
+    className="list"
+  >
+    <li
+      className="item"
+    >
+      <a
+        className="link"
+        href="/"
+      >
+        <Icon
+          name="twitter"
+          size="medium"
+          type="use"
+        />
+      </a>
+    </li>
+    <li
+      className="item"
+    >
+      <a
+        className="link"
+        href="/"
+      >
+        <Icon
+          name="facebook"
+          size="medium"
+          type="use"
+        />
+      </a>
+    </li>
+    <li
+      className="item"
+    >
+      <a
+        className="link"
+        href="/"
+      >
+        <Icon
+          name="telegram"
+          size="medium"
+          type="use"
+        />
+      </a>
+    </li>
+  </ul>
+</div>
+`;
