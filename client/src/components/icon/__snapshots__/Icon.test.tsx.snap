@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon component should render an image 1`] = `
+<svg
+  className="container"
+  height="100%"
+  width="100%"
+>
+  <image
+    height="100%"
+    width="100%"
+    xlinkHref="logo.svg"
+  />
+</svg>
+`;
+
+exports[`Icon component should render an use 1`] = `
+<svg
+  className="container"
+  height="100%"
+  width="100%"
+>
+  <use
+    xlinkHref="logo.svg#logo"
+  />
+</svg>
+`;
+
+exports[`Icon component should return null 1`] = `null`;
