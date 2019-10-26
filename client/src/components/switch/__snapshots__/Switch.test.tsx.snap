@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switch component should render 1`] = `
+<div
+  className="switch"
+>
+  <label
+    className="switch__label"
+    htmlFor="switcher"
+  >
+    <input
+      checked={false}
+      className="switch__input"
+      id="switcher"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <div
+      className="switch__slider"
+    >
+      <div
+        className="switch__circle"
+      />
+    </div>
+  </label>
+</div>
+`;
