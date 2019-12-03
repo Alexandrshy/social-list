@@ -1,7 +1,16 @@
 {
-  "name": "my-app",
+  "name": "follow-up-client",
   "version": "0.1.0",
+  "license": "MIT",
   "private": true,
+  "author": {
+    "name": "Alexandrshy",
+    "url": "https://github.com/Alexandrshy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Alexandrshy/social-list"
+  },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.2",
     "@types/classnames": "^2.2.9",
@@ -12,6 +21,9 @@
     "apollo-boost": "^0.4.4",
     "classnames": "^2.2.6",
     "graphql": "^14.5.8",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-scripts": "3.2.0",
@@ -23,8 +35,24 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "rules": {
+      "prettier/prettier": "error",
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn"
+    }
   },
   "browserslist": {
     "production": [
