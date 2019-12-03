@@ -9,7 +9,7 @@ type PropsType = {
   isPaired?: boolean;
 };
 
-export const GilterGroup: React.FC<PropsType> = ({
+export const FilterGroup: React.FC<PropsType> = ({
   list,
   name,
   isPaired = false
@@ -36,9 +36,7 @@ export const GilterGroup: React.FC<PropsType> = ({
                   type="radio"
                   name={name}
                 />
-                <div className={s.filterItem__button}>
-                  <span>{item}</span>
-                </div>
+                <div className={s.filterItem__button}>{item}</div>
               </label>
             </li>
           )

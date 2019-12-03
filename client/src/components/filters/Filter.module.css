@@ -1,5 +1,6 @@
 .filter {
   width: 100%;
+  margin-top: 3.5rem;
 }
 
 .filterList {
@@ -12,7 +13,7 @@
 }
 
 .filter .filterItem {
-  padding: 5px;
+  padding: 0.25rem;
   text-align: center;
 }
 
@@ -25,12 +26,15 @@
 }
 
 .filterItem__button {
-  padding: 9px 7px;
+  width: 100%;
+  padding: 0.525rem 0.435rem;
   border-radius: 3px;
   font-weight: 400;
   background-color: var(--dark-light);
   transition: var(--linear-background-color);
   color: var(--white);
+  border: none;
+  box-shadow: none;
   cursor: pointer;
 }
 
@@ -40,9 +44,4 @@
 
 .filterItem__input:checked + .filterItem__button {
   background: var(--first-side-gradient);
-  background-image: linear-gradient(
-    -290deg,
-    var(--first-side-gradient),
-    var(--second-side-gradient)
-  );
 }

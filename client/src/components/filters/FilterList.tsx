@@ -1,27 +1,11 @@
 import React from "react";
-import classNames from "classnames";
 
-import { GilterGroup } from "./FilterGroup";
-
-import s from "./Filter.module.css";
+import { FilterGroup } from "./FilterGroup";
 
 export const FilterList: React.FC = () => {
   return (
     <>
-      <GilterGroup list={["👨 Male", "👩 Female"]} name="gender" isPaired />
-      <GilterGroup
-        list={[
-          "🇬🇧 English",
-          "🇨🇳 Chinese",
-          "🇫🇷 French",
-          "🇵🇹 Portuguese",
-          "🇷🇺 Russian",
-          "🇳🇱 Dutch"
-        ]}
-        name="language"
-        isPaired
-      />
-      <GilterGroup
+      <FilterGroup
         list={[
           "🕹 AR & VR",
           "🤖 Artificial Intelligence",
@@ -40,6 +24,18 @@ export const FilterList: React.FC = () => {
           "✍ Writing"
         ]}
         name="type"
+      />
+      <FilterGroup
+        list={[
+          "🇬🇧 English",
+          "🇨🇳 Chinese",
+          "🇫🇷 French",
+          "🇵🇹 Portuguese",
+          "🇷🇺 Russian",
+          "🇳🇱 Dutch"
+        ]}
+        name="language"
+        isPaired
       />
     </>
   );
